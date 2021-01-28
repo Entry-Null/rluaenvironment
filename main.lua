@@ -1,4 +1,4 @@
-getgenv().RM = function(path)
+getgenv().DELETEVAl = function(path)
 path:Remove()
 end
 
@@ -6,7 +6,7 @@ getgenv().CHANGEVAL = function(path, valname, New)
 path[""..valname..""].value = New
 end
 
-getgenv().GetVal = function(path, valname)
+getgenv().GETVAL = function(path, valname)
 print(path[""..valname..""])
 local ret = path[""..valname..""]
 return ret
@@ -27,21 +27,21 @@ print(args)
 end
 
 
-getgenv().halt = function(time)
+getgenv().HALT = function(time)
 wait(time)
 end
 
 
-getgenv().RemoteCall = function(path, args, args2)
+getgenv().REMOTECALL = function(path, args, args2)
 path:FireServer(args, args2)
 end
 
-getgenv().CloneToPath = function(org, new)
+getgenv().CLONEPATH = function(org, new)
 local orginal = org:Clone()
 orginal.Parent = new
 end
 
-getgenv().Notify = function(title, text, icon, time)
+getgenv().MESSAGE = function(title, text, icon, time)
     game:GetService("StarterGui"):SetCore("SendNotification", {
         Title = title;
         Text = text;
@@ -51,7 +51,7 @@ getgenv().Notify = function(title, text, icon, time)
 end
 
 
-getgenv().Noclip = function()
+getgenv().NOCLIP = function()
 local Players = game:GetService("Players")
 local RunS = game:GetService("RunService")
 local PLR, Mouse = Players.LocalPlayer, Players.LocalPlayer:GetMouse();
