@@ -27,4 +27,3 @@ Client = Get.Players.LocalPlayer
 ClientChar = Get.Players.LocalPlayer.Character
 Work = game.Workspace
 load = loadstring
-dofile("main.lua")
