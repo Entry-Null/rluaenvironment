@@ -22,7 +22,7 @@ return auth, version, name
 if started == false 
 wait(math.huge)
 else
-print(RAN)
+print("RAN")
 end
 
 local cre, ver, auth = IDENTIFICATION()
