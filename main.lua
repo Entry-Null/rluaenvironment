@@ -12,6 +12,25 @@ local ret = path[""..valname..""]
 return ret
 end
 
+local started = false
+
+getgenv().IDENTIFICATION(auth, version, name)
+local creator = auth
+local vers = version
+local scriptname = name
+return auth, version, name
+if started == false 
+wait(math.huge)
+else
+print(RAN)
+end
+
+local cre, ver, auth = IDENTIFICATION()
+
+getgenv().halt = function(time)
+wait(time)
+end
+
 getgenv().RemoteCall = function(path, args, args2)
 path:FireServer(args, args2)
 end
@@ -23,7 +42,7 @@ end
 
 getgenv().Notify = function(title, text, icon, time)
     game:GetService("StarterGui"):SetCore("SendNotification", {
-        Title = title; 
+        Title = title;
         Text = text;
         Icon = icon;
         Duration = time;
@@ -36,7 +55,7 @@ local Players = game:GetService("Players")
 local RunS = game:GetService("RunService")
 local PLR, Mouse = Players.LocalPlayer, Players.LocalPlayer:GetMouse();
 local rawmet, Index, NIndex, NCall, Caller = getrawmetatable(game), getrawmetatable(game).__index, getrawmetatable(game).__newindex, getrawmetatable(game).__namecall, checkcaller or is_protosmasher_caller
-local noclip, KeyT = false, "x" 
+local noclip, KeyT = false, "x"
 setreadonly(rawmet, false)
 
 RunS.Stepped:Connect(function()
@@ -78,3 +97,4 @@ load = loadstring
 local RnS = game:GetService("RunService")
 local Mouse =  Client:GetMouse()
 local rawmet, Index, NIndex, NCall, Caller = getrawmetatable(game), getrawmetatable(game).__index, getrawmetatable(game).__newindex, getrawmetatable(game).__namecall, checkcaller or is_protosmasher_caller
+print("".. ver .."".. auth .." was made by ".. cre .."")
