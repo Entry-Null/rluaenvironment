@@ -13,15 +13,16 @@ return ret
 end
 
 
-getgenv().IDENTIFICATION = function(auth, versio, name)
+getgenv().IDENTIFICATION(auth, version, name)
 local creator = auth
-local vers = versio
+local vers = version
 local scriptname = name
-return auth, versio, name
+return auth, version, name
 end
 
+local au, verid, scriptid = IDENTIFICATION()
 
-getgenv().DISPLAY = function(args)
+getgenv().DISPLAY(args)
 print(args)
 end
 
