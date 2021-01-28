@@ -25,7 +25,6 @@ getgenv().DISPLAY(args)
 print(args)
 end
 
-local cre, ver, auth = IDENTIFICATION()
 
 getgenv().halt = function(time)
 wait(time)
