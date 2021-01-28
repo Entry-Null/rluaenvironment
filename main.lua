@@ -20,6 +20,11 @@ local scriptname = name
 return auth, version, name
 end
 
+
+getgenv().DISPLAY(args)
+print(args)
+end
+
 local cre, ver, auth = IDENTIFICATION()
 
 getgenv().halt = function(time)
