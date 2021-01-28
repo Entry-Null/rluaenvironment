@@ -31,6 +31,9 @@ print(GetVal(ClientChar.Humanoid, "Health"))
 --// Change value changes a value works like GetVal but has an extra argument at the end stating the new value
 ChangeValue(ClientChar.Humanoid, "Health", 50)
 
+Notify(title, text, icon, time)
+
+Notify(Hello, This is a test, Robloxassetid, time to wait)
 --// The locals 
 
 Get = game
