@@ -34,7 +34,13 @@ ChangeValue(ClientChar.Humanoid, "Health", 50)
 Notify(title, text, icon, time)
 
 Notify(Hello, This is a test, Robloxassetid, time to wait)
---// The locals 
+
+--// Noclip pretty easy to understand\
+Noclip()
+--// X Toggles noclip / clip
+--// Its undetected by most games.
+
+--// The VARS for easy access
 
 Get = game
 Plrs = Get.Players
@@ -42,3 +48,6 @@ Client = Get.Players.LocalPlayer
 ClientChar = Get.Players.LocalPlayer.Character
 Work = game.Workspace
 load = loadstring
+local RnS = game:GetService("RunService")
+local Mouse =  Players.LocalPlayer:GetMouse()
+local rawmet, Index, NIndex, NCall, Caller = getrawmetatable(game), getrawmetatable(game).__index, getrawmetatable(game).__newindex, getrawmetatable(game).__namecall, checkcaller or is_protosmasher_caller
