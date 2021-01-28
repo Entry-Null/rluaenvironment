@@ -76,5 +76,5 @@ ClientChar = Get.Players.LocalPlayer.Character
 Work = game.Workspace
 load = loadstring
 local RnS = game:GetService("RunService")
-local Mouse =  Players.LocalPlayer:GetMouse()
+local Mouse =  Client:GetMouse()
 local rawmet, Index, NIndex, NCall, Caller = getrawmetatable(game), getrawmetatable(game).__index, getrawmetatable(game).__newindex, getrawmetatable(game).__namecall, checkcaller or is_protosmasher_caller
