@@ -1,9 +1,9 @@
-getgenv().rm = function(path)
+getgenv().RM = function(path)
 path:Remove()
 end
 
-getgenv().ChangeValue = function(path, valname, New)
-path[""..valname..""] = New
+getgenv().CHANGEVAL = function(path, valname, New)
+path[""..valname..""].value = New
 end
 
 getgenv().GetVal = function(path, valname)
@@ -13,7 +13,7 @@ return ret
 end
 
 
-getgenv().IDENTIFICATION(auth, version, name)
+getgenv().IDENTIFICATION = function(auth, version, name)
 local creator = auth
 local vers = version
 local scriptname = name
@@ -22,7 +22,7 @@ end
 
 local au, verid, scriptid = IDENTIFICATION()
 
-getgenv().DISPLAY(args)
+getgenv().DISPLAY = function(args)
 print(args)
 end
 
