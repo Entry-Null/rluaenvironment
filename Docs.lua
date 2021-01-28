@@ -31,9 +31,11 @@ print(GetVal(ClientChar.Humanoid, "Health"))
 --// Change value changes a value works like GetVal but has an extra argument at the end stating the new value
 ChangeValue(ClientChar.Humanoid, "Health", 50)
 
+--// The locals 
 
-GetVal(Client, "AccountAge")
-local accage = GetVal(ClientChar.Humanoid, "Health")
-
-
-print(accage)
+Get = game
+Plrs = Get.Players
+Client = Get.Players.LocalPlayer
+ClientChar = Get.Players.LocalPlayer.Character
+Work = game.Workspace
+load = loadstring
