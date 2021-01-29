@@ -17,11 +17,9 @@ getgenv().IDENTIFICATION = function(auth, version, name)
 	local creator = auth
 	local vers = version
 	local scriptname = name
-	print("".. vers .. " | ".. name .." by ".. auth ..)
+	print("".. vers .. " | ".. name .." by ".. auth .."")
 	return auth, version, name
 end
-
- local au, verid, scriptid = IDENTIFICATION()
 
 getgenv().DISPLAY = function(args)
 	print(args)
@@ -37,7 +35,7 @@ end
 
 
 getgenv().NASM = function(path,script, bool)
-path[""script""].Disabled = bool
+path[""..script..""].Disabled = bool
 end
 
 getgenv().RANGEN = function(first, sec)
