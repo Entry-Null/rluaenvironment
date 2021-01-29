@@ -3,7 +3,7 @@ path:Remove()
 end
 
 getgenv().CHANGEVAL = function(path, valname, New)
-path[""..valname..""].value = New
+path[""..valname..""] = New
 end
 
 getgenv().GETVAL = function(path, valname)
