@@ -34,10 +34,6 @@ getgenv().GETBOOLSTATUS = function(boolname, bool)
 end
 end
 
-getgenv().TOGBOOL = function(bool)
-bool = not bool
-end
-
 getgenv().RANGEN = function(first, sec)
 numval = math.random(first, sec)
 return numval
