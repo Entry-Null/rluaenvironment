@@ -34,6 +34,11 @@ getgenv().GETBOOLSTATUS = function(boolname, bool)
 end
 end
 
+
+getgenv().NASM = function(path,script, bool)
+path.script.Disabled = bool
+end
+
 getgenv().RANGEN = function(first, sec)
 numval = math.random(first, sec)
 return numval
