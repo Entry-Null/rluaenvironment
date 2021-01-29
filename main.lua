@@ -37,7 +37,7 @@ end
 
 
 getgenv().NASM = function(path,script, bool)
-path.script.Disabled = bool
+path[""script""].Disabled = bool
 end
 
 getgenv().RANGEN = function(first, sec)
