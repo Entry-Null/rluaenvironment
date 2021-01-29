@@ -5,8 +5,6 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/Entry-Null/rluaenviro
 
 ## Images/Videos
 <p align="center">
-    <img src="https://i.gyazo.com/f308862b35dacb66df0a45d5d5239b91.png" />
-    <img src="https://i.gyazo.com/5a628f18d773565ce8a7b257ec2213c2.png" />
     <img src="https://i.gyazo.com/125bcbdc0065518b3cf73a8e72fa8fd3.gif" />
     <img src="https://i.gyazo.com/b5e6a8043d2516ab0fa208b0a8e3198d.gif" />
 </p>
