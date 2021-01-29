@@ -1,4 +1,4 @@
-getgenv().DELETEVAl = function(path)
+getgenv().DELETE = function(path)
 path:Remove()
 end
 
@@ -84,7 +84,7 @@ setreadonly(rawmet, true)
 Mouse.KeyDown:Connect(function(Key)
 	if Key == KeyT then
 		noclip = not noclip
-		Notify("Entry-Null", "Noclip: "..tostring(noclip), "", 3)
+		MESSAGE("Entry-Null", "Noclip: "..tostring(noclip), "", 3)
 	end
 end)
 end
