@@ -17,6 +17,7 @@ getgenv().IDENTIFICATION = function(auth, version, name)
 	local creator = auth
 	local vers = version
 	local scriptname = name
+	print("".. vers .. " | ".. name .." by ".. auth ..)
 	return auth, version, name
 end
 
