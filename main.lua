@@ -43,7 +43,7 @@ end
 end
 
 getgenv().RANGEN = function(first, sec)
-local numval = math.random(first, sec)
+numval = math.random(first, sec)
 return numval
 end
 
