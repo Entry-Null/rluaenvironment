@@ -99,3 +99,4 @@ PROCEDURE = loadstring
 local RnS = game:GetService("RunService")
 local Mouse =  Client:GetMouse()
 local rawmet, Index, NIndex, NCall, Caller = getrawmetatable(game), getrawmetatable(game).__index, getrawmetatable(game).__newindex, getrawmetatable(game).__namecall, checkcaller or is_protosmasher_caller
+--//
