@@ -28,7 +28,7 @@ print(args)
 end
 
 getgenv().GETBOOLSTATUS = function(boolname, bool)
-if boolname = bool then 
+if boolname = bool then
 return true
 else
 return false
@@ -42,6 +42,10 @@ bool = not bool
 end
 end
 
+getgenv().RANGEN = function(first, sec)
+local numval = math.random(first, sec)
+return numval
+end
 
 
 getgenv().ISTRUE = function(bool)
@@ -53,6 +57,41 @@ getgenv().ISFALSE = function(bool)
 bool = false
 end
 
+getgenv().WSB = function()
+local mt = getrawmetatable(game)
+local oldnc = mt.__namecall
+setreadonly(mt,false)
+
+local LocalPlayer = game:GetService("Players").LocalPlayer
+
+mt.__namecall = function(self,...)
+	local method = getnamecallmethod()
+	if method == "Kick" and self == LocalPlayer then
+		return
+	end
+	return oldnc(self,...)
+end
+
+setreadonly(mt,true)
+end
+
+getgenv().NOKICK = function()
+local mt = getrawmetatable(game)
+local oldnc = mt.__namecall
+setreadonly(mt,false)
+
+local LocalPlayer = game:GetService("Players").LocalPlayer
+
+mt.__namecall = function(self,...)
+	local method = getnamecallmethod()
+	if method == "Kick" and self == LocalPlayer then
+		return
+	end
+	return oldnc(self,...)
+end
+
+setreadonly(mt,true)
+end
 
 
 
