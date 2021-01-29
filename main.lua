@@ -20,8 +20,6 @@ local scriptname = name
 return auth, version, name
 end
 
-local au, verid, scriptid = IDENTIFICATION()
-
 getgenv().DISPLAY = function(args)
 print(args)
 end
