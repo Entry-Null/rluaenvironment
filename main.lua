@@ -18,7 +18,6 @@ getgenv().IDENTIFICATION = function(auth, version, name)
 	local vers = version
 	local scriptname = name
 	return auth, version, name
-	print("".. vers .." ".. name .." Was made by " .. auth .. ".")
 end
 
  local au, verid, scriptid = IDENTIFICATION()
@@ -28,10 +27,11 @@ getgenv().DISPLAY = function(args)
 end
 
 getgenv().GETBOOLSTATUS = function(boolname, bool)
-	if boolname = bool then
+	if boolname == bool then
 	 return true
 	else
 	 return false
+end
 end
 
 getgenv().TOGBOOL = function(bool, reset)
