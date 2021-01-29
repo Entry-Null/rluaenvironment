@@ -18,6 +18,7 @@ local creator = auth
 local vers = version
 local scriptname = name
 return auth, version, name
+print("".. vers .." ".. name .." Was made by " .. auth .. ".")
 end
 
 getgenv().DISPLAY = function(args)
