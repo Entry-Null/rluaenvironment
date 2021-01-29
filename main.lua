@@ -21,9 +21,39 @@ return auth, version, name
 print("".. vers .." ".. name .." Was made by " .. auth .. ".")
 end
 
+local au, verid, scriptid = IDENTIFICATION()
+
 getgenv().DISPLAY = function(args)
 print(args)
 end
+
+getgenv().GETBOOLSTATUS = function(boolname, bool)
+if boolname = bool then 
+return true
+else
+return false
+end
+
+getgenv().TOGBOOL = function(bool, reset)
+if reset then
+bool = false
+else
+bool = not bool
+end
+end
+
+
+
+getgenv().ISTRUE = function(bool)
+bool = true
+end
+
+
+getgenv().ISFALSE = function(bool)
+bool = false
+end
+
+
 
 
 getgenv().HALT = function(time)
