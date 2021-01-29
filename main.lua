@@ -1,37 +1,37 @@
 getgenv().DELETE = function(path)
-path:Remove()
+	path:Remove()
 end
 
 getgenv().CHANGEVAL = function(path, valname, New)
-path[""..valname..""] = New
+	path[""..valname..""] = New
 end
 
 getgenv().GETVAL = function(path, valname)
-print(path[""..valname..""])
-local ret = path[""..valname..""]
-return ret
+	print(path[""..valname..""])
+	local ret = path[""..valname..""]
+  return ret
 end
 
 
 getgenv().IDENTIFICATION = function(auth, version, name)
-local creator = auth
-local vers = version
-local scriptname = name
-return auth, version, name
-print("".. vers .." ".. name .." Was made by " .. auth .. ".")
+	local creator = auth
+	local vers = version
+	local scriptname = name
+	return auth, version, name
+	print("".. vers .." ".. name .." Was made by " .. auth .. ".")
 end
 
-local au, verid, scriptid = IDENTIFICATION()
+ local au, verid, scriptid = IDENTIFICATION()
 
 getgenv().DISPLAY = function(args)
-print(args)
+	print(args)
 end
 
 getgenv().GETBOOLSTATUS = function(boolname, bool)
-if boolname = bool then
-return true
-else
-return false
+	if boolname = bool then
+	 return true
+	else
+	 return false
 end
 
 getgenv().TOGBOOL = function(bool, reset)
