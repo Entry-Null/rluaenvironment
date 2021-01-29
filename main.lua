@@ -34,12 +34,8 @@ getgenv().GETBOOLSTATUS = function(boolname, bool)
 end
 end
 
-getgenv().TOGBOOL = function(bool, reset)
-if reset then
-bool = false
-else
+getgenv().TOGBOOL = function(bool)
 bool = not bool
-end
 end
 
 getgenv().RANGEN = function(first, sec)
