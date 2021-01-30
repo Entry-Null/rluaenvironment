@@ -153,11 +153,13 @@ Mouse.KeyDown:Connect(function(Key)
 end)
 end
 
-getgenv().LOC = function(localname, localdata, int)
+getgenv().LOC = function(localdata)
 local storedloc = localdata
 
 return storedloc
 end
+
+local BEGINFUNC = function
 
 Get = game
 Plrs = Get.Players
