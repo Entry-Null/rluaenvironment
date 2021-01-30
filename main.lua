@@ -156,7 +156,7 @@ end
 getgenv().LOC = function(localname, localdata, int)
 local storedloc = localdata
 
-return localname
+return storedloc
 end
 
 local BEGINFUNC = function
