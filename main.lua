@@ -263,10 +263,7 @@ local f = loadstring(code);
  f()
 end
 
-while true do
-wait(4)
-print(FLOATGEN(341, 213888))
-end
+
 
 Get = game
 Plrs = Get.Players
