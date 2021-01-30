@@ -20,7 +20,7 @@ getgenv().IDENTIFICATION = function(auth, version, name)
 	print("".. vers .. " | ".. name .." by ".. auth .."")
 	return auth, version, name
 end
---@@ -37,7 +35,7 @@ end
+
 getgenv().DISPLAY = function(args)
 	print(args)
 end
@@ -152,6 +152,14 @@ Mouse.KeyDown:Connect(function(Key)
 	end
 end)
 end
+
+getgenv().LOC = function(localname, localdata, int)
+local storedloc = localdata
+
+return localname
+end
+
+local BEGINFUNC = function
 
 Get = game
 Plrs = Get.Players
