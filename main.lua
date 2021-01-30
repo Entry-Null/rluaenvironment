@@ -159,8 +159,6 @@ local storedloc = localdata
 return storedloc
 end
 
-local BEGINFUNC = function
-
 Get = game
 Plrs = Get.Players
 Client = Get.Players.LocalPlayer
