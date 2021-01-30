@@ -108,7 +108,7 @@ mt.__index = newcclosure(function(o, p)
 	if t ~= nil then
 		return t[3]
 	end
-	
+
 	return old(o, p)
 end)
 
@@ -305,10 +305,6 @@ local f = loadstring(code);
  f()
 end
 
-while true do
-wait(4)
-print(FLOATGEN(341, 213888))
-end
 
 Get = game
 Plrs = Get.Players
