@@ -153,13 +153,57 @@ Mouse.KeyDown:Connect(function(Key)
 end)
 end
 
-getgenv().LOC = function(localdata)
+getgenv().LOC = function(localdata, pharse)
 local storedloc = localdata
-
+sloc = ""..sloc..", "..localdata..""
 return storedloc
 end
 
-local BEGINFUNC = function
+sloc = {}
+
+function FLR(stringb)
+local str = stringb
+  return str:sub(1, 1)
+end
+
+getgenv().ENRESET = function()
+	game.StarterGui:SetCore("ResetButtonCallback", true)
+end
+
+getgenv().CRASH = function()
+	if game.Players.LocalPlayer then
+		local var = 0
+		while true do
+			var += math.random()^math.random(-5,5) 
+		end
+	end 
+end
+
+
+getgenv().SCRAM = function(msg)
+	local newmsg = {}
+	for char = 0, #msg do
+		table.insert(newmsg, math.random(0, #msg), string.sub(msg, char, char))
+	end
+	for i = 1, #newmsg do
+		if newmsg[i] == nil then
+			table.remove(newmsg, i)
+		end
+	end
+	local ran, result = pcall(function()
+		return table.concat(newmsg)
+	end)
+	if ran and result then return result or "" end
+end
+
+getgenv().FINDOBJ = function(object, substring)
+	for _, obj in pairs(object:GetChildren()) do
+		if string.match(obj.Name, substring) then
+			return object
+		end
+	end
+end
+
 
 Get = game
 Plrs = Get.Players
