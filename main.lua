@@ -245,6 +245,14 @@ getgenv()._FINDOBJ = function(object, substring)
 	end
 end
 
+getgenv().GENTEXT = function(num)
+    local JSuIZ = ""
+    for i = 1,num do
+        JSuIZ = JSuIZ..string.char(math.random(65, 90))
+    end
+    return JSuIZ
+end
+
 getgenv().FLOATGEN = function(lower, greater)
     return lower + math.random()  * (greater - lower);
 end
