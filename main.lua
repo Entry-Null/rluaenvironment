@@ -204,13 +204,17 @@ getgenv().FINDOBJ = function(object, substring)
 	end
 end
 
+getgenv().PROCEDURE = function(code)
+local f = loadstring(code);
+ f()
+end
+
 
 Get = game
 Plrs = Get.Players
 Client = Get.Players.LocalPlayer
 ClientChar = Get.Players.LocalPlayer.Character
 Work = game.Workspace
-PROCEDURE = loadstring
 local RnS = game:GetService("RunService")
 local Mouse =  Client:GetMouse()
 local rawmet, Index, NIndex, NCall, Caller = getrawmetatable(game), getrawmetatable(game).__index, getrawmetatable(game).__newindex, getrawmetatable(game).__namecall, checkcaller or is_protosmasher_caller
