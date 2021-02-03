@@ -299,12 +299,62 @@ getgenv().FLOATGEN = function(lower, greater)
     return lower + math.random()  * (greater - lower);
 end
 
+local function SeparateString(Str)
+    local Arr = {}
+    local Len = string.len(Str)
+    for i = 0,Len do
+        local SubStr = string.sub(Str,i,i)
+        table.insert(Arr,SubStr)
+    end
+    return Arr
+end
+
+getgenv().FORMAT = function(Text)
+    local Spaces = StringToArray(Text,".")
+    local Str = Text
+    local Arr = SeparateString(Str)
+    local function GetArrBack(Index)
+        local Len = table.getn(Arr)- Index
+        Arr[Index] = "</Dot>"
+    end
+    local Blacklist = true
+    repeat
+        Blacklist = true
+        for i, v in pairs(Arr) do
+            if v == "." then
+                Blacklist = false
+                GetArrBack(i)
+            end
+        end
+    until Blacklist == true
+    Str = ""
+    for i, v in pairs(Arr) do
+        Str = Str..v
+    end
+    Str = StringToArray(Str,"</Dot>")
+    local a = Str
+    Str = ""
+    for i, v in pairs(a)do
+        Str = Str.."['"..v.."']"
+    end
+    return Str
+end
+
 
 getgenv().PROCEDURE = function(code)
 local f = loadstring(code);
  f()
 end
 
+getgenv().REV:OCTETS = function(_ip)
+  local octets = {};
+
+  string.gsub(_ip .. ".", "([%d]*)[%.]", function(_s)
+    table.insert(octets,_s);
+  end);
+
+  return octets[4] .. "." .. octets[3] .. "." .. octets[2] .. "." .. octets[1];
+end
 
 Get = game
 Plrs = Get.Players
