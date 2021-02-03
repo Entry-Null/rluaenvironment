@@ -88,7 +88,7 @@ getgenv().SPOOF = function(obj, property, value)
 	end
 end
 
-getgenv().findwithintable = function(o, p)
+getgenv().TABFINDSTR= function(o, p)
 	for i, v in pairs(_G.objs) do
 		if table.find(v, o) and table.find(v, p) then
 			return v
