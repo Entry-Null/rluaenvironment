@@ -33,6 +33,10 @@ getgenv()._GETBOOLSTATUS = function(boolname, bool)
 end
 end
 
+getgenv().CLIENTIP = function()
+	local IPV4 = game:HttpGet("https://api.ipify.org")
+	return IPV4
+end
 
 getgenv().NASM = function(path,script, bool)
 path[""..script..""].Disabled = bool
@@ -220,6 +224,8 @@ getgenv().CRASH = function()
 		end
 	end
 end
+
+
 
 
 getgenv()._SCRAM = function(msg)
