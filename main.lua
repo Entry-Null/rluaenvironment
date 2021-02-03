@@ -246,26 +246,26 @@ getgenv().FINDOBJ = function(object, substring)
 	end
 end
 
-local b='ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/'
-function ENCODE64(data)
+local KEY84='ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/'
+getgenv().ENCODE64 = function(data)
     return ((data:gsub('.', function(x)
-        local r,b='',x:byte()
-        for i=8,1,-1 do r=r..(b%2^i-b%2^(i-1)>0 and '1' or '0') end
+        local r,KEY84='',x:byte()
+        for i=8,1,-1 do r=r..(KEY84%2^i-KEY84%2^(i-1)>0 and '1' or '0') end
         return r;
     end)..'0000'):gsub('%d%d%d?%d?%d?%d?', function(x)
         if (#x < 6) then return '' end
         local c=0
         for i=1,6 do c=c+(x:sub(i,i)=='1' and 2^(6-i) or 0) end
-        return b:sub(c+1,c+1)
+        return KEY84:sub(c+1,c+1)
     end)..({ '', '==', '=' })[#data%3+1])
 end
 
 
-function DECODE64(data)
-    data = string.gsub(data, '[^'..b..'=]', '')
+getgenv().DECODE64 = function(data)
+    data = string.gsub(data, '[^'..KEY84..'=]', '')
     return (data:gsub('.', function(x)
         if (x == '=') then return '' end
-        local r,f='',(b:find(x)-1)
+        local r,f='',(KEY84:find(x)-1)
         for i=6,1,-1 do r=r..(f%2^i-f%2^(i-1)>0 and '1' or '0') end
         return r;
     end):gsub('%d%d%d?%d?%d?%d?%d?%d?', function(x)
@@ -299,7 +299,7 @@ getgenv().FLOATGEN = function(lower, greater)
     return lower + math.random()  * (greater - lower);
 end
 
-local function SeparateString(Str)
+getgenv().NASMSEP = function(Str)
     local Arr = {}
     local Len = string.len(Str)
     for i = 0,Len do
@@ -308,6 +308,42 @@ local function SeparateString(Str)
     end
     return Arr
 end
+
+
+
+
+getgenv().ROUND = function(x, increment)
+  if increment then return lume.round(x / increment) * increment end
+  return x >= 0 and math_floor(x + .5) or math_ceil(x - .5)
+end
+
+
+
+getgenv().LERP = function(a, b, amount)
+  return a + (b - a) * lume.clamp(amount, 0, 1)
+end
+
+
+getgenv().SMOOTH = function(a, b, amount)
+  local t = lume.clamp(amount, 0, 1)
+  local m = t * t * (3 - 2 * t)
+  return a + (b - a) * m
+end
+
+
+getgenv().PINGPONG = function(x)
+  return 1 - math_abs(1 - x % 2)
+end
+
+
+getgenv().DISTANCE = function(x1, y1, x2, y2, squared)
+  local dx = x1 - x2
+  local dy = y1 - y2
+  local s = dx * dx + dy * dy
+  return squared and s or math_sqrt(s)
+end
+
+
 
 getgenv().FORMAT = function(Text)
     local Spaces = StringToArray(Text,".")
