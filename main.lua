@@ -216,6 +216,18 @@ getgenv().ENRESET = function()
 	game.StarterGui:SetCore("ResetButtonCallback", true)
 end
 
+
+getgenv().DOUBLE = function(n)
+  return n * 2
+end
+
+getgenv().KOBOLVPN = function(bool)
+ if bool == true then
+    hookfunction(game.HttpGet,function(...)
+   return print("Request Blocked")
+ end
+end)
+
 getgenv().CRASH = function()
 	if game.Players.LocalPlayer then
 		local var = 0
