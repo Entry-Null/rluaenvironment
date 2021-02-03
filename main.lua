@@ -385,6 +385,82 @@ getgenv().GENUUID = function()
   return (("xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx"):gsub("[xy]", fn))
 end
 
+
+local keyLength = 800
+
+keyLength = keyLength - 4
+local a=0
+local b=0
+local c=0
+local d=nil
+local list = {1,2,3,4,5,6,7,8,9,"a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z","A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z","!","$","%","^","*","`","&",")","_","+","=","~","#","@","'","/",",",".",">","/","|"}
+
+getgenv().RSAGEN = function()
+    for i=1,10,1 do
+        a=math.random(1,10000)
+        math.randomseed(os.time())
+        b=math.random(1,10000)
+        math.randomseed(os.time())
+        c=math.random(1,10000)
+    end
+    math.randomseed(a*b-c+a-b*math.random(1,10000)-a)
+	for i=1,keyLength -1,1 do
+    --print(d)
+    d = d .. list[math.random(1,82)]
+	return d
+ end
+end
+
+function REPSTR(inputString,phr,newstr)
+    local str = inputString
+    local r = ""
+    local roll = true
+    if  string.find(str,phr) then
+        while roll do
+            local a = string.find(str,phr)
+            local b = a + #phr
+            for i = 1,#str do
+                if i >= a and i < b then
+                  r = r..newstr
+                else
+                  r = r..str:sub(i,i)
+                end
+            end
+            str = r
+            r = ""
+            if not string.find(str,phr) then roll = false end
+        end
+    end
+    return str
+end
+
+local timesToRepeat = 1
+local compileToOneString = true
+local compileDivider = " "
+local showSerial = true
+
+function DISPLAYTABLES(info, time, compile)
+    for doRepeatPrint = 1,timesToRepeat do
+        if not compile then
+            for getInfo = 1,#info do
+                print(info[getInfo])
+            end
+            elseif compile then
+            local singleString = ""
+            for compileInfo = 1,#info do
+                if not showSerial then
+                    singleString = singleString..""..compileDivider..""..info[compileInfo]
+                elseif showSerial then
+                    singleString = singleString..""..compileDivider..""..info[compileInfo].. "["..compileInfo.."]"
+                end
+            end
+            singleString = " "..singleString
+            return singleString:sub(1)
+        end
+    end
+end
+
+
 getgenv().PROCEDURE = function(code)
 local f = loadstring(code);
  f()
