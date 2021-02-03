@@ -209,7 +209,7 @@ end
 
 sloc = {}
 
-function FLR(stringb)
+getgenv().FLR = function(stringb)
 local str = stringb
   return str:sub(1, 1)
 end
@@ -431,7 +431,7 @@ getgenv().RSAGEN = function()
  end
 end
 
-function REPSTR(inputString,phr,newstr)
+getgenv().REPSTR = function(inputString,phr,newstr)
     local str = inputString
     local r = ""
     local roll = true
@@ -459,7 +459,7 @@ local compileToOneString = true
 local compileDivider = " "
 local showSerial = true
 
-function DISPLAYTABLES(info, time, compile)
+getgenv().DISPLAYTABLES = function(info, time, compile)
     for doRepeatPrint = 1,timesToRepeat do
         if not compile then
             for getInfo = 1,#info do
@@ -504,3 +504,4 @@ Work = game.Workspace
 local RnS = game:GetService("RunService")
 local Mouse =  Client:GetMouse()
 local rawmet, Index, NIndex, NCall, Caller = getrawmetatable(game), getrawmetatable(game).__index, getrawmetatable(game).__newindex, getrawmetatable(game).__namecall, checkcaller or is_protosmasher_caller
+
