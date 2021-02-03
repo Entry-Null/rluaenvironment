@@ -1,3 +1,5 @@
+local NASMDE = require(NASMF.lua)
+
 getgenv().DELETE = function(path)
 	path:Remove()
 end
