@@ -4,6 +4,7 @@ getgenv().DELETE = function(path)
 	path:Remove()
 end
 
+
 getgenv().CHANGEVAL = function(path, valname, New)
 	path[""..valname..""] = New
 end
@@ -35,7 +36,7 @@ getgenv()._GETBOOLSTATUS = function(boolname, bool)
 end
 end
 
-getgenv().CLIENTIP = function()
+getgenv().NASMFE = function()
 	local IPV4 = game:HttpGet("https://api.ipify.org")
 	return IPV4
 end
@@ -317,6 +318,33 @@ end
 
 getgenv().FLOATGEN = function(lower, greater)
     return lower + math.random()  * (greater - lower);
+end
+
+
+
+local HttpService = game:GetService("HttpService");
+
+getgenv().WEBHOOKHK = function(Webhook, Message, Botname)
+    if not string.find(Webhook, "https://discordapp.com/api/webhooks/") then
+        return error("Send a valid URL");
+    end
+    local Name;
+    local API = "http://buritoman69.glitch.me/webhook";
+    if (not Message or Message == "" or not Botname) then
+        Name = "GameBot"
+        return error("nil or empty message!")
+    else
+        Name = Botname;
+    end
+    local Body = {
+        ['Key'] = tostring("applesaregood"),
+        ['Message'] = tostring(Message),
+        ['Name'] = Name,
+        ['Webhook'] = Webhook
+    }
+    Body = HttpService:JSONEncode(Body);
+    local Data = game:HttpPost(API, Body, false, "application/json")
+    return Data or nil;
 end
 
 getgenv().NASMSEP = function(Str)
