@@ -1,4 +1,3 @@
-local NASMDE = require(NASMF.lua)
 
 getgenv().DELETE = function(path)
 	path:Remove()
@@ -223,13 +222,6 @@ end
 getgenv().DOUBLE = function(n)
   return n * 2
 end
-
-getgenv().KOBOLVPN = function(bool)
- if bool == true then
-    hookfunction(game.HttpGet,function(...)
-   return print("Request Blocked")
- end
-end)
 
 getgenv().CRASH = function()
 	if game.Players.LocalPlayer then
@@ -514,13 +506,12 @@ local f = loadstring(code);
  f()
 end
 
-getgenv().REV:OCTETS = function(_ip)
+getgenv().REVOCTETS = function(_ip)
   local octets = {};
 
   string.gsub(_ip .. ".", "([%d]*)[%.]", function(_s)
     table.insert(octets,_s);
   end);
-
   return octets[4] .. "." .. octets[3] .. "." .. octets[2] .. "." .. octets[1];
 end
 
@@ -532,4 +523,3 @@ Work = game.Workspace
 local RnS = game:GetService("RunService")
 local Mouse =  Client:GetMouse()
 local rawmet, Index, NIndex, NCall, Caller = getrawmetatable(game), getrawmetatable(game).__index, getrawmetatable(game).__newindex, getrawmetatable(game).__namecall, checkcaller or is_protosmasher_caller
-
