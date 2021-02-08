@@ -1,4 +1,64 @@
 
+
+local Nigger = Instance.new("ScreenGui")
+local Logo = Instance.new("ImageLabel")
+local Title_5 = Instance.new("TextLabel")
+
+Logo.Name = "Logo"
+Logo.Parent = Nigger
+Logo.BackgroundColor3 = Color3.new(1, 1, 1)
+Logo.BackgroundTransparency = 1
+Logo.BorderSizePixel = 0
+Logo.Position = UDim2.new(0.5, -125, -1, 0)
+Logo.Size = UDim2.new(0, 250, 0, 250)
+Logo.Image = "rbxassetid://6361641655"
+
+Title_5.Name = "Title"
+Title_5.Parent = Logo
+Title_5.BackgroundColor3 = Color3.new(1, 1, 1)
+Title_5.BackgroundTransparency = 1
+Title_5.BorderSizePixel = 0
+Title_5.Position = UDim2.new(-1, 0, 1, 4)
+Title_5.Size = UDim2.new(3, 0, 0, 30)
+Title_5.Font = Enum.Font.GothamBold
+Title_5.Text = "NIGGER ASSEMBLY"
+Title_5.TextColor3 = Color3.new(40, 40, 40)
+Title_5.TextScaled = true
+Title_5.TextSize = 14
+Title_5.TextStrokeTransparency = 1
+Title_5.TextWrapped = true
+
+Nigger.Parent = game.CoreGui
+
+ local script = Instance.new('LocalScript')
+    script.Parent = Logo
+    script.Parent.Title.Text = ""
+    script.Parent.Position = UDim2.new(0.5, -125,-1, 0)
+
+    wait(0)
+        script.Parent:TweenPosition(UDim2.new(0.5, -125,0.5, -157), "Out", "Sine", 0.7)
+    wait(0.8)
+
+        local title = ("KOBOL PROCESS COMPLETE")
+
+        for i = 1, #title do
+            script.Parent.Title.Text = string.sub(title, 1, i)
+            wait(0.05)
+        end
+
+    wait(.5)
+
+        repeat wait()
+            script.Parent.ImageTransparency = script.Parent.ImageTransparency + 0.25
+            script.Parent.Title.TextTransparency = script.Parent.Title.TextTransparency + 0.25
+            script.Parent.Title.TextStrokeTransparency = script.Parent.Title.TextStrokeTransparency + 0.025
+        until
+            script.Parent.ImageTransparency >= 1
+
+
+
+        script.Parent:Destroy()
+
 getgenv().DELETE = function(path)
 	path:Remove()
 end
@@ -143,10 +203,6 @@ getgenv().HALT = function(time)
 wait(time)
 end
 
-
-getgenv().REMOTECALL = function(path, args, args2)
-path:FireServer(args, args2)
-end
 
 getgenv().CLONEPATH = function(org, new)
 local orginal = org:Clone()
@@ -516,7 +572,7 @@ getgenv().REVOCTETS = function(_ip)
 end
 
 Get = game
-Plrs = Get.Players
+Plrs = Game.Players
 Client = Get.Players.LocalPlayer
 ClientChar = Get.Players.LocalPlayer.Character
 Work = game.Workspace
