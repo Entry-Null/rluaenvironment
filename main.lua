@@ -59,8 +59,36 @@ Nigger.Parent = game.CoreGui
 
         script.Parent:Destroy()
 
+for i,v in pairs(game:GetService("JointsService"):GetChildren()) do
+
+if v:IsA("RemoteEvent") then
+
+local mt = getrawmetatable(game)
+make_writeable(mt)
+
+local remote = v
+local old = mt.__namecall
+mt.__namecall = newcclosure(function(self, ...)
+    if self == remote and getnamecallmethod() == "FireServer" then
+        return wait(9e9)
+    end
+    return old(self, ...)
+end)
+
+end
+end
+
+
+
 getgenv().DELETE = function(path)
 	path:Remove()
+end
+getgenv().NEWINST = function(cls,props)
+local inst = Instance.new(cls)
+for i,v in pairs(props) do
+	inst[i] = v
+end
+return inst
 end
 
 
@@ -204,6 +232,10 @@ wait(time)
 end
 
 
+getgenv().REMOTECALL = function(path, args, args2)
+path:FireServer(args, args2)
+end
+
 getgenv().CLONEPATH = function(org, new)
 local orginal = org:Clone()
 orginal.Parent = new
@@ -219,35 +251,7 @@ getgenv().MESSAGE = function(title, text, icon, time)
 end
 
 
-getgenv().NOCLIP = function()
-local Players = game:GetService("Players")
-local RunS = game:GetService("RunService")
-local PLR, Mouse = Players.LocalPlayer, Players.LocalPlayer:GetMouse();
-local rawmet, Index, NIndex, NCall, Caller = getrawmetatable(game), getrawmetatable(game).__index, getrawmetatable(game).__newindex, getrawmetatable(game).__namecall, checkcaller or is_protosmasher_caller
-local noclip, KeyT = false, "x"
-setreadonly(rawmet, false)
 
-RunS.Stepped:Connect(function()
-	if noclip == true and PLR and PLR.Character and PLR.Character:FindFirstChild("Humanoid") then
-		pcall(function()
-			PLR.Character.Head.CanCollide = false
-			PLR.Character.Torso.CanCollide = false
-		end)
-	end
-end)
-
-rawmet.__newindex = newcclosure(function(self, crv, Value)
-	if Caller() then
-		return NIndex(self, crv, Value)
-	end
-	if tostring(self) == "HumanoidRootPart" or tostring(self) == "Torso" then
-		if crv == "CFrame" and self:IsDescendantOf(PLR.Character) then
-			return true
-		end
-	end
-	return NIndex(self, crv, Value)
-end)
-setreadonly(rawmet, true)
 
 Mouse.KeyDown:Connect(function(Key)
 	if Key == KeyT then
@@ -368,32 +372,6 @@ getgenv().FLOATGEN = function(lower, greater)
     return lower + math.random()  * (greater - lower);
 end
 
-
-
-local HttpService = game:GetService("HttpService");
-
-getgenv().WEBHOOKHK = function(Webhook, Message, Botname)
-    if not string.find(Webhook, "https://discordapp.com/api/webhooks/") then
-        return error("Send a valid URL");
-    end
-    local Name;
-    local API = "http://buritoman69.glitch.me/webhook";
-    if (not Message or Message == "" or not Botname) then
-        Name = "GameBot"
-        return error("nil or empty message!")
-    else
-        Name = Botname;
-    end
-    local Body = {
-        ['Key'] = tostring("applesaregood"),
-        ['Message'] = tostring(Message),
-        ['Name'] = Name,
-        ['Webhook'] = Webhook
-    }
-    Body = HttpService:JSONEncode(Body);
-    local Data = game:HttpPost(API, Body, false, "application/json")
-    return Data or nil;
-end
 
 getgenv().NASMSEP = function(Str)
     local Arr = {}
@@ -572,7 +550,7 @@ getgenv().REVOCTETS = function(_ip)
 end
 
 Get = game
-Plrs = Game.Players
+Plrs = Get.Players
 Client = Get.Players.LocalPlayer
 ClientChar = Get.Players.LocalPlayer.Character
 Work = game.Workspace
