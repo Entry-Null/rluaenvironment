@@ -59,26 +59,6 @@ Nigger.Parent = game.CoreGui
 
         script.Parent:Destroy()
 
-for i,v in pairs(game:GetService("JointsService"):GetChildren()) do
-
-if v:IsA("RemoteEvent") then
-
-local mt = getrawmetatable(game)
-make_writeable(mt)
-
-local remote = v
-local old = mt.__namecall
-mt.__namecall = newcclosure(function(self, ...)
-    if self == remote and getnamecallmethod() == "FireServer" then
-        return wait(9e9)
-    end
-    return old(self, ...)
-end)
-
-end
-end
-
-
 
 getgenv().DELETE = function(path)
 	path:Remove()
@@ -193,38 +173,6 @@ getgenv().DESPOOF = function(obj, property)
 end
 
 
-local mt = getrawmetatable(game)
-setreadonly(mt, false)
-old = mt.__index
-
-mt.__index = newcclosure(function(o, p)
-	local t = findwithintable(o, p)
-	if t ~= nil then
-		return t[3]
-	end
-
-	return old(o, p)
-end)
-
-
-getgenv().NOKICK = function()
-local mt = getrawmetatable(game)
-local oldnc = mt.__namecall
-setreadonly(mt,false)
-
-local LocalPlayer = game:GetService("Players").LocalPlayer
-
-mt.__namecall = function(self,...)
-	local method = getnamecallmethod()
-	if method == "Kick" and self == LocalPlayer then
-		return
-	end
-	return oldnc(self,...)
-end
-
-setreadonly(mt,true)
-end
-
 
 
 getgenv().HALT = function(time)
@@ -252,14 +200,6 @@ end
 
 
 
-
-Mouse.KeyDown:Connect(function(Key)
-	if Key == KeyT then
-		noclip = not noclip
-		MESSAGE("Entry-Null", "Noclip: "..tostring(noclip), "", 3)
-	end
-end)
-end
 
 getgenv().LOC = function(localdata, pharse)
 local storedloc = localdata
@@ -556,4 +496,4 @@ ClientChar = Get.Players.LocalPlayer.Character
 Work = game.Workspace
 local RnS = game:GetService("RunService")
 local Mouse =  Client:GetMouse()
-local rawmet, Index, NIndex, NCall, Caller = getrawmetatable(game), getrawmetatable(game).__index, getrawmetatable(game).__newindex, getrawmetatable(game).__namecall, checkcaller or is_protosmasher_caller
+print("[ Loaded Without Problems. ]")
