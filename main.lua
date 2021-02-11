@@ -1,65 +1,5 @@
 
 
-local Nigger = Instance.new("ScreenGui")
-local Logo = Instance.new("ImageLabel")
-local Title_5 = Instance.new("TextLabel")
-
-Logo.Name = "Logo"
-Logo.Parent = Nigger
-Logo.BackgroundColor3 = Color3.new(1, 1, 1)
-Logo.BackgroundTransparency = 1
-Logo.BorderSizePixel = 0
-Logo.Position = UDim2.new(0.5, -125, -1, 0)
-Logo.Size = UDim2.new(0, 250, 0, 250)
-Logo.Image = "rbxassetid://6361641655"
-
-Title_5.Name = "Title"
-Title_5.Parent = Logo
-Title_5.BackgroundColor3 = Color3.new(1, 1, 1)
-Title_5.BackgroundTransparency = 1
-Title_5.BorderSizePixel = 0
-Title_5.Position = UDim2.new(-1, 0, 1, 4)
-Title_5.Size = UDim2.new(3, 0, 0, 30)
-Title_5.Font = Enum.Font.GothamBold
-Title_5.Text = "NIGGER ASSEMBLY"
-Title_5.TextColor3 = Color3.new(40, 40, 40)
-Title_5.TextScaled = true
-Title_5.TextSize = 14
-Title_5.TextStrokeTransparency = 1
-Title_5.TextWrapped = true
-
-Nigger.Parent = game.CoreGui
-
- local script = Instance.new('LocalScript')
-    script.Parent = Logo
-    script.Parent.Title.Text = ""
-    script.Parent.Position = UDim2.new(0.5, -125,-1, 0)
-
-    wait(0)
-        script.Parent:TweenPosition(UDim2.new(0.5, -125,0.5, -157), "Out", "Sine", 0.7)
-    wait(0.8)
-
-        local title = ("KOBOL PROCESS COMPLETE")
-
-        for i = 1, #title do
-            script.Parent.Title.Text = string.sub(title, 1, i)
-            wait(0.05)
-        end
-
-    wait(.5)
-
-        repeat wait()
-            script.Parent.ImageTransparency = script.Parent.ImageTransparency + 0.25
-            script.Parent.Title.TextTransparency = script.Parent.Title.TextTransparency + 0.25
-            script.Parent.Title.TextStrokeTransparency = script.Parent.Title.TextStrokeTransparency + 0.025
-        until
-            script.Parent.ImageTransparency >= 1
-
-
-
-        script.Parent:Destroy()
-
-
 getgenv().DELETE = function(path)
 	path:Remove()
 end
@@ -69,6 +9,130 @@ for i,v in pairs(props) do
 	inst[i] = v
 end
 return inst
+end
+
+local AESWANNE = {
+  ["a"] = "RNME";
+  ["b"] = "BFS";
+  ["c"] = "CLT";
+  ["d"] = "DAW";
+  ["e"] = "DHS";
+  ["f"] = "DFE";
+  ["g"] = "ZCR";
+  ["h"] = "EQD";
+  ["i"] = "XQETY";
+  ["j"] = "JAE";
+  ["k"] = "GEQ";
+  ["l"] = "HHD";
+  ["m"] = "ERT";
+  ["n"] = "XVG";
+  ["o"] = "QYR";
+  ["p"] = "NBC";
+  ["q"] = "YTE";
+  ["r"] = "JGD";
+  ["s"] = "MZB";
+  ["t"] = "NVD";
+  ["u"] = "POX";
+  ["v"] = "WTU";
+  ["w"] = "WSL";
+  ["x"] = "WXZ";
+  ["y"] = "TEX";
+  ["z"] = "A263577A07486668121C6FC3C38D00BA";
+  ["A"] = "7731291";
+  ["B"] = "6943C03C2CDDA9C55867FED27D5E0039CFA5F82A4D1C144BE59ECA11E5449E11";
+  ["C"] = "IllIIllIIlI";
+  ["D"] = "YELEL";
+  ["E"] = "KLHEZD";
+  ["F"] = "KELE";
+  ["G"] = "AB48A79C41C746D0309605C6ADAE2335A569397F3806567075ACD87C5E2492DB";
+  ["H"] = "J3G";
+  ["I"] = "K63H";
+  ["J"] = "IllIIllIIllII";
+  ["K"] = "JZ129O";
+  ["L"] = "Z4ZK";
+  ["M"] = "07E956FC539F048F12F1CACCFD268996C5D106C2D7F25E626EDB0D32D832BD68";
+  ["N"] = "XME";
+  ["O"] = "ZZ3N";
+  ["P"] = "ZZOJL2KE";
+  ["Q"] = "HEWG";
+  ["R"] = "Z3K";
+  ["S"] = "JEREO";
+  ["T"] = "LHS";
+  ["U"] = "810C0E44E380B66BC0C65B9E37EF33484EC4286D9DD4EE4BAC3CAEB169CF8C7B";
+  ["V"] = "77F49E042EAD996BD66EA7F6A7E31678143F8D2E7B19912BB7FDDD0E4F3C3150";
+  ["W"] = "JZV";
+  ["X"] = "ZXX";
+  ["Y"] = "1ZY";
+  ["Z"] = "Z23X";
+  ["!"] = "719E1508C45A66CBD73407F49156FF92C78D5CAE5B6B115E87655EB68C79C39A";
+  ["@"] = "ASET";
+  ["#"] = "WATE";
+  ["$"] = "23F96D13A22C8196BF16AD80203FF29201513B6C9A2F9CC41F90E2DE26872EE7";
+  ["%"] = "112";
+  ["^"] = "114";
+  ["&"] = "116";
+  ["*"] = "285";
+  ["("] = "836";
+  [")"] = "362";
+  ["["] = "976";
+  ["]"] = "634";
+  ["{"] = "975";
+  ["}"] = "086";
+  [";"] = "023";
+  [":"] = "752";
+  ["'"] = "825";
+  ['"'] = "734";
+  ["<"] = "153";
+  [">"] = "164";
+  [","] = "725";
+  ["."] = "6723";
+  ["/"] = "7344";
+  ["?"] = "8356";
+  ["|"] = "623400x2";
+  ["\\"] = "8664";
+  ["`"] = "0784";
+  ["~"] = "0356";
+  ["-"] = "IllIllII";
+  ["_"] = "SUPERGAY";
+  ["="] = "39100";
+  ["+"] = "3854";
+  ["1"] = "616017B";
+  ["2"] = "3244";
+  ["3"] = "342";
+  ["4"] = "007";
+  ["5"] = "042";
+  ["6"] = "921x3021";
+  ["7"] = "10F74D";
+  ["8"] = "32G52A";
+  ["9"] = "2199";
+  ["0"] = "008";
+  [" "] = "AES";
+}
+
+local Encrypted = "";
+local Decrypted=  "";
+getgenv().AESWANNACRY = function(Str)
+  Encrypted = "";
+for i=1, #Str do
+  for l,v in pairs(AESWANNE) do
+      if Str:sub(i,i) == l then
+            Encrypted = Encrypted..v..";";
+        end
+    end
+end
+return Encrypted
+end
+
+getgenv().AESDECRY = function(STR)
+Decrypted = ""
+for i=1, #STR do
+for l,v in pairs(AESWANNE) do
+    if STR:sub(i,i+2) == v then
+        Decrypted = Decrypted..l;
+      end
+  end
+end
+return Decrypted
 end
 
 
