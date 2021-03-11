@@ -1,4 +1,6 @@
+local bannerA = loadstring(game:HttpGet("https://raw.githubusercontent.com/Entry-Null/rluaenvironment/main/logo.txt", true))()
 
+print(bannerA)
 
 getgenv().DELETE = function(path)
 	path:Remove()
