@@ -560,4 +560,12 @@ ClientChar = Get.Players.LocalPlayer.Character
 Work = game.Workspace
 local RnS = game:GetService("RunService")
 local Mouse =  Client:GetMouse()
+if getgenv.kobolmoduleSettings.Compile.PrintAn == true then
 print("[ Loaded Without Problems. ]")
+end
+
+if getgenv.kobolmoduleSettings.Compile.Compile == true then
+local boolINST = NEWINST(boolvalue, true)
+	boolINST.Parent = game.Players.LocalPlayer
+		boolINST.Name = "ASPX(".. RANGEN(47238, 3849732849) ..")(ALLOWFUXIT(true))"
+end
