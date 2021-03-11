@@ -586,6 +586,11 @@ end
 
 getgenv().READ, WRITE = readfile or syn_io_read,writefile or syn_io_write
 
+getgenv().WRAP_INST = function(call, callback)
+    loadstring(call, true)()
+    getgenv().callbackREG = callback
+end
+    
 getgenv().CHECKFILE(filename)
 a,b = pcall(READ, filename)
 return a
@@ -795,3 +800,76 @@ end
 return finalresult512(H)
 end
 
+function table.length(T)
+    local size = 0
+    for k,v in pairs(T) do
+        size = size + 1
+    end
+    return size
+end
+
+function table.tostring(A)
+    local size = table.length(A)
+    local string = "{"
+    for i,v in ipairs(A) do
+        string = string .. (v or "")
+        if i < size then
+           string = string .. ","
+        end
+    end
+    string = string .. "}"
+    return string
+end
+
+getgenv.()quickSort = function(array, p, r)
+    p = p or 1
+    r = r or #array
+    if p < r then
+        q = partition(array, p, r)
+        quickSort(array, p, q - 1)
+        quickSort(array, q + 1, r)
+    end
+end
+
+function partition(array, p, r)
+    local x = array[r]
+    local i = p - 1
+    for j = p, r - 1 do
+        if array[j] <= x then
+            i = i + 1
+            local temp = array[i]
+            array[i] = array[j]
+            array[j] = temp
+        end
+    end
+    local temp = array[i + 1]
+    array[i + 1] = array[r]
+    array[r] = temp
+    return i + 1
+end
+
+local r = 5
+local b = 11*12
+local h = 6
+local enable_pi = true -- set true if you want to multiply by pi, set false to use set pi value
+local pi_value = 3.14 -- set to 0 if you dont want a set value 
+
+getgenv().CONE = function()
+    if enable_pi or pi_value == 0 then
+        return (1/3)*r^2*math.pi*h
+    else
+        if pi_value == 0 then
+            return (1/3)*r^2*h .."*pi"
+        else
+            return (1/3)*r^2*pi_value*h
+        end
+    end
+end
+
+getgenv().SQUARE = function
+    return (1/3)*b*b*h
+end
+
+getgenv().TRIANGLE = function
+    return 1/3*((1/2)*b)*h
+end
