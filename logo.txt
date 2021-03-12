@@ -1,3 +1,4 @@
+getgenv().BANNER2 = [[
 ██   ██  ██████  ██████   ██████  ██      
 ██  ██  ██    ██ ██   ██ ██    ██ ██      
 █████   ██    ██ ██████  ██    ██ ██      
@@ -8,3 +9,4 @@
                                           
    Fucking up your game since this week.
         CC. Entry-Null
+]]
