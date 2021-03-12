@@ -1,18 +1,15 @@
 
 # Loadstring
 ```lua
---KOBOL 6.8 V3 HE
-local kobolmodule = {
-    getgenv().kobolmoduleSettings = {
-    
-    }
-    --#################################
-    getgenv().kobolmoduleSettings.Compile = {
-        getgenv().Compile = true
-        getgenv().PrintAn = true
-     }
-}
+--KOBOL 6.9 V4 HB
+getgenv().kobolmodule = {
+    ["prints"] = true, --leave this on or shit hits the fan
+    ["Compiles"] = true --Sends data to server, HASHED IP, UUID (script ID) Username 
+ }
+ 
 loadstring(game:HttpGet("https://raw.githubusercontent.com/Entry-Null/rluaenvironment/main/main.lua", true))()
+ --###########################
+
 ```
 # Making Scripting easy, KOBOL.
 ## Over 103 custom functions / LOCALS.
