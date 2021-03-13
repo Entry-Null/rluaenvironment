@@ -25,6 +25,14 @@ STARTOBJ'Part'{
     };
 };
 
+HALT(10);
+
+DISPLAY("Bye bye.");
+
+HALT(0.7);
+
+DELETE'Work.Hello';
+
 And much more, Custom math, Genorators, Checks, Scans, Functions.
 
 ## Images/Videos
