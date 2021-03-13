@@ -375,7 +375,21 @@
      end))
  end
  
- 
+getgenv().STARTOBJ = function(ty)
+	return function(data)
+		local obj = Instance.new(ty)
+		for k, v in pairs(data) do
+			if type(k) == 'number' then
+				v.Parent = obj
+			else
+				obj[k] = v
+			end
+		end
+		return obj
+	end
+end
+
+
  getgenv()._FINDOBJ = function(object, substring)
      for _, obj in pairs(object:GetChildren()) do
          if string.match(obj.Name, substring) then
@@ -585,7 +599,19 @@
  if getgenv().kobolmodule.prints == true then
  print("[ Loaded Without Problems. ]")
  end
- 
+
+ for _, service in ipairs(game:GetChildren()) do
+	local ok, service = pcall(function(service)
+		return game:GetService(service.ClassName)
+	end, service)
+	if ok then
+		local name = service.ClassName
+		if name:match("Service$") then
+			name = name:sub(1, #name-7)
+		end
+		getgenv().[name] = service
+	end
+end
  
  getgenv().REGEDIT = function(param, valuename, value)
      local getreg = debug.getregistry or getreg
