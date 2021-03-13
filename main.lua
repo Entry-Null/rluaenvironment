@@ -1,3 +1,11 @@
+getgenv().kobolmodule = {
+    ["prints"] = true, --leave this on or shit hits the fan
+    ["Compiles"] = false --Sends data to server, HASHED IP, UUID (script ID) Username 
+ };
+ 
+
+
+
 getgenv().BANNER2 = [[
  
     _____                   _______                   _____                   _______                   _____  
