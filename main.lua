@@ -1,5 +1,3 @@
-
- 
  getgenv().BANNER2 = [[
  
            _____                   _______                   _____                   _______                   _____  
@@ -609,7 +607,7 @@ end
 		if name:match("Service$") then
 			name = name:sub(1, #name-7)
 		end
-		getgenv().[name] = service
+		getgenv()[name] = service
 	end
 end
  
