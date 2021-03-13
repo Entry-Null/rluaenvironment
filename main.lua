@@ -22,6 +22,9 @@ print(getgenv().BANNER2)
 
 getgenv().DELETE = function(path)
 path:Remove()
+local VALUE = function(val)
+    val:remove
+end
 end
 
 
