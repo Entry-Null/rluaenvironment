@@ -543,6 +543,8 @@ end
 return str
 end
 
+
+
 local timesToRepeat = 1
 local compileToOneString = true
 local compileDivider = " "
@@ -895,3 +897,21 @@ getgenv().TRIANGLE = function()
 return 1/3*((1/2)*b)*h
 end
 
+getgenv().REVOKE = function(str)
+  local folder = Instance.new("Folder")
+  folder.Parent = game
+  folder.Name = "StoredMT"
+  str.Parent = folder
+end
+
+local mt = getmetatable("")
+mt.__index["REVOKE"] = REVOKE
+
+
+getgenv().ENVOKE = function(str, p)
+  local folder = game.StoredMT
+  folder.str.Parent = p
+end
+
+
+mt.__index["ENVOKE"] = ENVOKE
