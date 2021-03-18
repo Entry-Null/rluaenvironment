@@ -915,3 +915,9 @@ end
 
 
 mt.__index["ENVOKE"] = ENVOKE
+
+getgenv().@EXTERN_OBJECT(lib, script)
+  loadstring(game:HttpGet(lib, true))()
+    loadstring(script)  
+  return script
+end
