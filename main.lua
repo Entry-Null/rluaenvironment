@@ -22,11 +22,7 @@ print(getgenv().BANNER2)
 
 getgenv().DELETE = function(path)
 path:Remove()
-local VALUE = function(val)
-    val:remove
 end
-end
-
 
 local AESWANNE = {
 ["a"] = "RNME";
@@ -597,18 +593,6 @@ if getgenv().kobolmodule.prints == true then
 print("[ Loaded Without Problems. ]")
 end
 
-for _, service in ipairs(game:GetChildren()) do
-local ok, service = pcall(function(service)
- return game:GetService(service.ClassName)
-end, service)
-if ok then
- local name = service.ClassName
- if name:match("Service$") then
-     name = name:sub(1, #name-7)
- end
- getgenv()[name] = service
-end
-end
 
 getgenv().REGEDIT = function(param, valuename, value)
 local getreg = debug.getregistry or getreg
@@ -904,20 +888,7 @@ getgenv().REVOKE = function(str)
   str.Parent = folder
 end
 
-local mt = getmetatable("")
-mt.__index["REVOKE"] = REVOKE
-
-
 getgenv().ENVOKE = function(str, p)
   local folder = game.StoredMT
   folder.str.Parent = p
-end
-
-
-mt.__index["ENVOKE"] = ENVOKE
-
-getgenv().EXTERN_OBJECT(lib, script)
-  loadstring(game:HttpGet(lib, true))()
-    loadstring(script)  
-  return script
 end
