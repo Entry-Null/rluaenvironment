@@ -585,7 +585,6 @@ end
 Get = game
 Plrs = Get.Players
 Client = Get.Players.LocalPlayer
-ClientChar = Get.Players.LocalPlayer.Character
 Work = game.Workspace
 local RnS = game:GetService("RunService")
 local Mouse =  Client:GetMouse()
