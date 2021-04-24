@@ -5,7 +5,7 @@ getgenv().kobolmodule = {
  
 
 
-
+getgenv().NULLITY = nil
 getgenv().BANNER2 = [[
 
  _   _____________  _____ _     
