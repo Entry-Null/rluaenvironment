@@ -3,6 +3,13 @@ getgenv().kobolmodule = {
     ["Compiles"] = false --Sends data to server, HASHED IP, UUID (script ID) Username 
  };
  
+getgenv().WHILEEXIST = function(inst)
+if inst then
+return true
+else
+return false
+end
+end
 
 
 getgenv().NULLITY = nil
