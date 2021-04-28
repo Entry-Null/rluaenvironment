@@ -11,23 +11,25 @@ return false
 end
 end
 
+getgenv().EXPORT = getgenv
+
 getgenv().PORT = function(name)
     return getgenv().name
 end
 
 getgenv().POP = function(name, new)
-    return getgenv().name = new
+    getgenv().name = new
+    return getgenv().name
 end
 
 
 getgenv().IMPORT = function(name)
     getgenv().name = ""
-    return getgenv().name = ""
+    return getgenv().name
 end
 
 getgenv().NULLITY = nil
 getgenv().BANNER2 = [[
-
  _   _____________  _____ _     
 | | / /  _  | ___ \|  _  | |    
 | |/ /| | | | |_/ /| | | | |    
@@ -35,7 +37,6 @@ getgenv().BANNER2 = [[
 | |\  \ \_/ / |_/ /\ \_/ / |____
 \_| \_/\___/\____/  \___/\_____/
                                 
-
 ]]
 
 print(getgenv().BANNER2)
