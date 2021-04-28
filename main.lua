@@ -12,6 +12,11 @@ end
 end
 
 
+getgenv().IMPORT = function(name)
+    getgenv().name = ""
+    return getgenv().name = ""
+end
+
 getgenv().NULLITY = nil
 getgenv().BANNER2 = [[
 
