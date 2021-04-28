@@ -3,13 +3,13 @@ getgenv().kobolmodule = {
     ["Compiles"] = false --Sends data to server, HASHED IP, UUID (script ID) Username 
  };
 getgenv().INST = {}
-getgenv().INST:PERFORM = function(func)
+getgenv().INSTPERFORM = function(func)
     coroutine.wrap(func)
 end
-getgenv().INST:OMIT = function(func)
+getgenv().INSTOMIT = function(func)
     coroutine.yield(func)
 end
-getgenv().INST:RECURRING = function(func)
+getgenv().INSTRECURRING = function(func)
     return coroutine.running()
 end
 
