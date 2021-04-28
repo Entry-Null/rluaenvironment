@@ -2,7 +2,19 @@ getgenv().kobolmodule = {
     ["prints"] = true, --leave this on or shit hits the fan
     ["Compiles"] = false --Sends data to server, HASHED IP, UUID (script ID) Username 
  };
- 
+getgenv().INST = {}
+getgenv().INST:PERFORM = function(func)
+    coroutine.wrap(func)
+end
+getgenv().INST:OMIT = function(func)
+    coroutine.yield(func)
+end
+getgenv().INST:RECURRING = function(func)
+    return coroutine.running()
+end
+
+
+
 getgenv().WHILEEXIST = function(inst)
 if inst then
 return true
