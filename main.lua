@@ -11,6 +11,14 @@ return false
 end
 end
 
+getgenv().PORT = function(name)
+    return getgenv().name
+end
+
+getgenv().POP = function(name, new)
+    return getgenv().name = new
+end
+
 
 getgenv().IMPORT = function(name)
     getgenv().name = ""
