@@ -13,6 +13,15 @@ getgenv().INSTRECURRING = function(func)
     return coroutine.running()
 end
 
+getgenv().Console = {}
+
+getgenv().Console.Display = function(arg)
+print(arg)
+end
+getgenv().int = function(arg)
+    loadstring(arg)()
+end
+  
 
 
 getgenv().WHILEEXIST = function(inst)
