@@ -13,6 +13,34 @@ getgenv().INSTRECURRING = function(func)
     return coroutine.running()
 end
 
+local int = {}
+
+local var = shared
+
+local void = nil
+
+local cout = print
+
+local Class = {}
+
+getgenv().int_main = function(h, lele)
+	if h == "static" then
+		spawn(lele)
+		Class.__index = Class
+
+		getgenv().int_main.Class.new = function()
+			local self = setmetatable({ lele }, Class)
+			return self
+		end
+
+		return Class
+	end
+	if h == "void" then
+		print = nil
+		spawn(lele)
+	end
+end
+
 getgenv().Console = {}
 
 getgenv().Console.Display = function(arg)
