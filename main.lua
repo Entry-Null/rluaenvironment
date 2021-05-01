@@ -13,6 +13,8 @@ getgenv().INSTRECURRING = function(func)
     return coroutine.running()
 end
 
+getgenv().Client = game.Players.LocalPlayer
+
 local int = {}
 
 local var = shared
