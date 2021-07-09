@@ -7,6 +7,6 @@ getgenv().BANNER2 = [[
                                           
                                           
                                           
-   Fucking up your game since this week.
+   Fucking up your game since this came out or fuck idk.
         CC. Entry-Null
 ]]
